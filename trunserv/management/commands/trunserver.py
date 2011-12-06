@@ -84,16 +84,6 @@ class Command(BaseCommand):
             wsgi_root = wsgi_resource()
             root = Root(wsgi_root)
 
-            # Static media
-            #staticrsrc = static.File(os.path.join(
-            #    os.path.abspath("."), "assets"))
-            #root.putChild("assets", staticrsrc)
-
-            # Admin media - change path if you are not using python 2.6
-            #admin_media = "lib/python2.6/site-packages/Django-0.96.5-py2.6.egg/django/contrib/admin/media"
-            #staticrsrc = static.File(os.path.join(os.path.abspath("."), admin_media))
-            #root.putChild("admin_media", staticrsrc)
-
             main_site = server.Site(root)
             internet.TCPServer(int(self.port), main_site
                     ).setServiceParent(application)
