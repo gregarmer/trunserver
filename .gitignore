@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+.*.swp
+*.rej
