@@ -4,8 +4,14 @@
 Thumbs.db
 .*.swp
 *.rej
+*~
 
 # Ignore pydev project files
 .project
 .pydevproject
+
+# Ignore files related with testing setup.py
+build/
+dist/
+trunserver.egg-info/
 
