@@ -4,3 +4,8 @@
 Thumbs.db
 .*.swp
 *.rej
+
+# Ignore pydev project files
+.project
+.pydevproject
+
