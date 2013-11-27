@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
-from django.core.handlers.wsgi import WSGIHandler
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+from django.core.servers.basehttp import get_internal_wsgi_application
 #from django.utils import autoreload
 from trunserv import autoreload
 
@@ -39,7 +40,8 @@ def wsgi_resource():
     pool.start()
     # Allow Ctrl-C to get you out cleanly:
     reactor.addSystemEventTrigger('after', 'shutdown', pool.stop)
-    wsgi_resource = wsgi.WSGIResource(reactor, pool, WSGIHandler())
+    handler = StaticFilesHandler(get_internal_wsgi_application())
+    wsgi_resource = wsgi.WSGIResource(reactor, pool, handler)
     return wsgi_resource
 
 
