@@ -7,12 +7,11 @@ from os.path import join, dirname
 setup(
       name='trunserver',
 
-      version='0.2',
+      version='0.0.3',
       license = 'MIT License',
       platforms='Linux',
       
-      description=('Splunk logger sends log messages to splunk directly from'
-                   ' your Python code.'),
+      description=('Twisted based Django runserver replacement'),
       long_description=open(join(dirname(__file__), 'README.rst')).read(),
       
       author='Gregory Armer',
@@ -33,7 +32,4 @@ setup(
         'Topic :: Software Development :: Testing'
         ],
       
-       # In order to run this command: python setup.py test
-       test_suite="nose.collector",
-       tests_require="nose",
      )
